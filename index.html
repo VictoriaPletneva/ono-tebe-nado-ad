@@ -3,133 +3,580 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Website Title</title>
+  <title>Аукцион "Оно тебе надо"</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    /* Reset styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
     body {
       margin: 0;
       overflow-x: hidden;
       font-family: 'Raleway', sans-serif;
+      color: #000;
+      line-height: 1;
     }
+    
     .container {
       width: 100%;
       max-width: 1100px;
-      margin: auto;
+      margin: 0 auto;
+    }
+    
+    /* Header styles */
+    .header {
+      width: 1100px;
+      height: 288px;
+      position: relative;
+      margin: 0 auto;
+    }
+    
+    .logo-link {
+      width: 144px;
+      height: 112px;
+      position: absolute;
+      left: 478px;
+      top: 92px;
+      overflow: hidden;
+      text-decoration: none;
+    }
+    
+    .logo-inner {
+      width: 128px;
+      height: 96px;
+      position: absolute;
+      left: 11.39px;
+      top: 2.79px;
+      outline: 6px solid #000;
+      outline-offset: -3px;
+    }
+    
+    .logo-bg {
+      width: 128px;
+      height: 112px;
+      position: absolute;
+      left: 9.03px;
+      top: 1.16px;
+      background-color: #000;
+    }
+    
+    .address-info {
+      width: 240px;
+      position: absolute;
+      left: 811px;
+      top: 144px;
+      color: #000;
+      font-size: 18px;
+      font-weight: 400;
+      font-family: 'Raleway', sans-serif;
+      line-height: normal;
+    }
+    
+    .divider {
+      height: 0;
+      position: absolute;
+      outline: 1px solid #000;
+      outline-offset: -0.5px;
+    }
+    
+    .contact-info {
+      position: absolute;
+      color: #000;
+      font-size: 18px;
+      font-weight: 400;
+      font-family: 'Raleway', sans-serif;
+      line-height: normal;
+    }
+    
+    .contact-info a {
+      color: inherit;
+      text-decoration: none;
+    }
+    
+    .nav-menu {
+      list-style: none;
+    }
+    
+    .nav-item {
+      position: absolute;
+    }
+    
+    .nav-link {
+      color: #000;
+      font-size: 18px;
+      font-weight: 400;
+      font-family: 'Raleway', sans-serif;
+      text-decoration: none;
+    }
+    
+    .dot {
+      width: 6px;
+      height: 6px;
+      position: absolute;
+      border-radius: 50%;
+      border: 0.5px solid #000;
+    }
+    
+    /* Hero section */
+    .hero {
+      width: 1100px;
+      height: 757px;
+      position: relative;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+    
+    .hero-image {
+      width: 1100px;
+      height: 757px;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    
+    .hero-overlay {
+      width: 1100px;
+      height: 757px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background-color: #000;
+      opacity: 0.6;
+    }
+    
+    .bid-button {
+      width: 256px;
+      height: 48px;
+      position: absolute;
+      left: 794px;
+      top: 656px;
+      border: 1px solid #fff;
+      background: transparent;
+      cursor: pointer;
+    }
+    
+    .bid-text {
+      position: absolute;
+      left: 16px;
+      top: 12px;
+      color: #fff;
+      font-size: 20px;
+      font-weight: 500;
+      font-family: 'Raleway', sans-serif;
+      text-transform: uppercase;
+      text-align: center;
+    }
+    
+    .hero-title {
+      position: absolute;
+      color: #fff;
+      font-size: 90px;
+      font-weight: 700;
+      font-family: 'Raleway', sans-serif;
+      text-transform: uppercase;
+      line-height: 115px;
+      letter-spacing: 30px;
+    }
+    
+    .hero-subtitle {
+      position: absolute;
+      left: 50px;
+      top: 668px;
+      color: #fff;
+      font-size: 20px;
+      font-weight: 400;
+      font-family: 'Raleway', sans-serif;
+      text-transform: uppercase;
+      line-height: 28px;
+    }
+    
+    /* Lots section */
+    .lots {
+      width: 1052px;
+      height: 723px;
+      position: relative;
+      margin: 0 auto;
+    }
+    
+    .lots-title {
+      position: absolute;
+      left: 40px;
+      top: 0;
+      color: #000;
+      font-size: 36px;
+      font-weight: 700;
+      font-family: 'Raleway', sans-serif;
+      text-transform: uppercase;
+    }
+    
+    .view-more {
+      position: absolute;
+      left: 40px;
+      top: 700px;
+      color: #000;
+      font-size: 20px;
+      font-weight: 400;
+      font-family: 'Raleway', sans-serif;
+      text-decoration: none;
+    }
+    
+    .lot-card {
+      width: 320px;
+      height: 596px;
+      position: absolute;
+    }
+    
+    .lot-image {
+      width: 320px;
+      height: 596px;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    
+    .lot-overlay {
+      width: 320px;
+      height: 596px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+    
+    .lot-description {
+      width: 256px;
+      position: absolute;
+      left: 40px;
+      color: #fff;
+      font-size: 20px;
+      font-weight: 400;
+      font-family: 'Raleway', sans-serif;
+      line-height: normal;
+    }
+    
+    .lot-title {
+      width: 256px;
+      position: absolute;
+      left: 40px;
+      top: 48px;
+      color: #fff;
+      font-size: 20px;
+      font-weight: 700;
+      font-family: 'Raleway', sans-serif;
+      text-decoration: underline;
+      text-transform: uppercase;
+      line-height: 1.4;
+    }
+    
+    /* About section */
+    .about {
+      width: 1052px;
+      height: 595px;
+      position: relative;
+      margin: 0 auto;
+    }
+    
+    .about-content {
+      width: 693px;
+      height: 384px;
+      position: absolute;
+      left: 359px;
+      top: 133px;
+    }
+    
+    .about-title {
+      position: absolute;
+      left: 0;
+      top: 3px;
+      color: #000;
+      font-size: 36px;
+      font-weight: 700;
+      font-family: 'Raleway', sans-serif;
+      text-transform: uppercase;
+    }
+    
+    .about-text {
+      width: 688px;
+      position: absolute;
+      left: 0;
+      color: #000;
+      font-size: 20px;
+      font-weight: 400;
+      font-family: 'Raleway', sans-serif;
+      line-height: normal;
+    }
+    
+    .about-logo {
+      width: 240px;
+      height: 240px;
+      position: absolute;
+      left: 47px;
+      top: 35px;
+    }
+    
+    .logo-circle {
+      width: 240px;
+      height: 240px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background-color: #000;
+      border-radius: 50%;
+    }
+    
+    .logo-inner-white {
+      width: 144px;
+      height: 112px;
+      position: absolute;
+      left: 46.48px;
+      top: 64px;
+      overflow: hidden;
+    }
+    
+    .logo-white-inner {
+      width: 128px;
+      height: 96px;
+      position: absolute;
+      left: 7px;
+      top: 3px;
+      outline: 6px solid #fff;
+      outline-offset: -3px;
+    }
+    
+    .logo-white-bg {
+      width: 144px;
+      height: 112px;
+      position: absolute;
+      left: 4.42px;
+      top: 1.25px;
+      background-color: #fff;
+    }
+    
+    /* Footer */
+    .footer {
+      width: 1100px;
+      height: 176px;
+      position: relative;
+      margin: 0 auto;
+    }
+    
+    .social-links {
+      width: 240px;
+      position: absolute;
+      left: 810px;
+      top: 1px;
+      display: flex;
+      gap: 48px;
+    }
+    
+    .social-link {
+      display: block;
+      text-decoration: none;
+    }
+    
+    .footer-nav {
+      list-style: none;
+    }
+    
+    .footer-nav-item {
+      position: absolute;
+    }
+    
+    .footer-nav-link {
+      color: #000;
+      font-size: 18px;
+      font-weight: 400;
+      font-family: 'Raleway', sans-serif;
+      text-decoration: none;
+      text-align: center;
+    }
+    
+    .footer-contact {
+      position: absolute;
+      color: #000;
+      font-size: 18px;
+      font-weight: 400;
+      font-family: 'Raleway', sans-serif;
+      line-height: normal;
+    }
+    
+    .footer-contact a {
+      color: inherit;
+      text-decoration: none;
     }
   </style>
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <div class="container w-[1100px] h-72 relative overflow-hidden mx-auto">
-      <!-- Логотип обёрнут в ссылку -->
-      <a href="/" class="w-36 h-28 left-[478px] top-[92px] absolute overflow-hidden">
-        <div class="w-32 h-24 left-[11.39px] top-[2.79px] absolute outline outline-[6px] outline-offset-[-3px] outline-black"></div>
-        <div class="w-32 h-28 left-[9.03px] top-[1.16px] absolute bg-black"></div>
-      </a>
-      <div class="w-60 left-[811px] top-[144px] absolute justify-start text-black text-lg font-normal font-['Raleway'] leading-normal">наб. Принсенграхт 263- 265, Амстердам</div>
-      <div class="w-32 h-0 left-[810px] top-[143px] absolute outline outline-1 outline-offset-[-0.50px] outline-black"></div>
-      <div class="w-60 h-6 left-[810px] top-[119px] absolute justify-start text-black text-lg font-normal font-['Raleway'] leading-normal"><a href="mailto:info@sobaka.ge">info@sobaka.ge</a></div>
-      <div class="w-32 h-0 left-[810px] top-[119px] absolute outline outline-1 outline-offset-[-0.50px] outline-black"></div>
-      <div class="w-60 h-6 left-[810.52px] top-[95px] absolute justify-start text-black text-lg font-normal font-['Raleway'] leading-normal"><a href="tel:+99995555555">+9 999 555 5555</a></div>
-      <div class="w-28 h-0 left-[331.48px] top-[155px] absolute outline outline-1 outline-offset-[-0.50px] outline-black"></div>
-      <a href="#" class="left-[331.48px] top-[133px] absolute justify-start text-black text-lg font-normal font-['Raleway']">об аукционе</a>
-      <div class="w-1.5 h-1.5 left-[312px] top-[142px] absolute rounded-full border-[0.50px] border-black"></div>
-      <div class="w-36 h-0 left-[148.48px] top-[155px] absolute outline outline-1 outline-offset-[-0.50px] outline-black"></div>
-      <a href="#" class="left-[148.48px] top-[133px] absolute justify-start text-black text-lg font-normal font-['Raleway']">посмотреть лоты</a>
-      <div class="w-1.5 h-1.5 left-[130px] top-[142px] absolute rounded-full border-[0.50px] border-black"></div>
-      <a href="#" class="left-[50px] top-[133px] absolute justify-start text-black text-lg font-normal font-['Raleway']">главная</a>
+  <header class="header">
+    <a href="/" class="logo-link">
+      <div class="logo-inner"></div>
+      <div class="logo-bg"></div>
+    </a>
+    
+    <address class="address-info">наб. Принсенграхт 263-265, Амстердам</address>
+    
+    <div class="divider" style="width: 128px; left: 810px; top: 143px;"></div>
+    
+    <div class="contact-info" style="width: 240px; height: 24px; left: 810px; top: 119px;">
+      <a href="mailto:info@sobaka.ge">info@sobaka.ge</a>
     </div>
+    
+    <div class="divider" style="width: 128px; left: 810px; top: 119px;"></div>
+    
+    <div class="contact-info" style="width: 240px; height: 24px; left: 810px; top: 95px;">
+      <a href="tel:+99995555555">+9 999 555 5555</a>
+    </div>
+    
+    <nav class="nav-menu">
+      <div class="nav-item" style="left: 331px; top: 133px;">
+        <a href="#" class="nav-link">об аукционе</a>
+      </div>
+      <div class="dot" style="left: 312px; top: 142px;"></div>
+      <div class="divider" style="width: 144px; left: 148px; top: 155px;"></div>
+      
+      <div class="nav-item" style="left: 148px; top: 133px;">
+        <a href="#" class="nav-link">посмотреть лоты</a>
+      </div>
+      <div class="dot" style="left: 130px; top: 142px;"></div>
+      <div class="divider" style="width: 112px; left: 50px; top: 155px;"></div>
+      
+      <div class="nav-item" style="left: 50px; top: 133px;">
+        <a href="#" class="nav-link">главная</a>
+      </div>
+    </nav>
   </header>
+  
   <main>
-    <section class="cover">
-      <div class="container w-[1100px] h-[757px] relative overflow-hidden mx-auto">
-        <img class="w-[1100px] h-[757px] left-0 top-0 absolute" src="https://placehold.co/1100x757" alt="Cover Image"/>
-        <div class="w-[1100px] h-[757px] left-0 top-0 absolute opacity-60 bg-black"></div>
-        <button class="w-64 h-12 left-[794px] top-[656px] absolute border border-white cursor-pointer">
-          <span class="w-48 h-7 left-[16px] top-[12px] absolute text-center text-white text-xl font-medium font-['Raleway'] uppercase">Сделать ставку</span>
-        </button>
-        <div class="left-[50px] top-[668px] absolute justify-start">
-          <span class="text-white text-xl font-normal font-['Raleway'] uppercase leading-7">Аукцион</span>
-          <span class="text-white text-xl font-normal font-['Raleway'] uppercase leading-7 tracking-[19.80px]"> </span>
-          <span class="text-white text-xl font-normal font-['Raleway'] uppercase leading-7">вещей,</span>
-          <span class="text-white text-xl font-normal font-['Raleway'] uppercase leading-7 tracking-[17.60px]"> </span>
-          <span class="text-white text-xl font-normal font-['Raleway'] uppercase leading-7 tracking-[24.20px]">в</span>
-          <span class="text-white text-xl font-normal font-['Raleway'] uppercase leading-7">которые</span>
-          <span class="text-white text-xl font-normal font-['Raleway'] uppercase leading-7 tracking-[17.60px]"> </span>
-          <span class="text-white text-xl font-normal font-['Raleway'] uppercase leading-7">никто</span>
-          <span class="text-white text-xl font-normal font-['Raleway'] uppercase leading-7 tracking-[19.80px]"> </span>
-          <span class="text-white text-xl font-normal font-['Raleway'] uppercase leading-7">не</span>
-          <span class="text-white text-xl font-normal font-['Raleway'] uppercase leading-7 tracking-[17.60px]"> </span>
-          <span class="text-white text-xl font-normal font-['Raleway'] uppercase leading-7">верил</span>
-        </div>
-        <div class="left-[663px] top-[435px] absolute text-right justify-start text-white text-8xl font-bold font-['Raleway'] uppercase leading-[115px] tracking-[30px]">НАДО</div>
-        <div class="left-[380.50px] top-[300px] absolute text-center justify-start text-white text-8xl font-bold font-['Raleway'] uppercase leading-[115px] tracking-[30px]">ТЕБЕ</div>
-        <div class="left-[50px] top-[165px] absolute justify-start text-white text-8xl font-bold font-['Raleway'] uppercase leading-[115px] tracking-[30px]">оНО</div>
+    <section class="hero">
+      <img class="hero-image" src="https://placehold.co/1100x757" alt="Главное изображение аукциона">
+      <div class="hero-overlay"></div>
+      
+      <button class="bid-button">
+        <span class="bid-text">Сделать ставку</span>
+      </button>
+      
+      <div class="hero-subtitle">
+        <span style="letter-spacing: 0;">Аукцион</span>
+        <span style="letter-spacing: 19.8px;"> </span>
+        <span style="letter-spacing: 0;">вещей,</span>
+        <span style="letter-spacing: 17.6px;"> </span>
+        <span style="letter-spacing: 24.2px;">в</span>
+        <span style="letter-spacing: 0;">которые</span>
+        <span style="letter-spacing: 17.6px;"> </span>
+        <span style="letter-spacing: 0;">никто</span>
+        <span style="letter-spacing: 19.8px;"> </span>
+        <span style="letter-spacing: 0;">не</span>
+        <span style="letter-spacing: 17.6px;"> </span>
+        <span style="letter-spacing: 0;">верил</span>
       </div>
+      
+      <h1 class="hero-title" style="left: 663px; top: 435px; text-align: right;">НАДО</h1>
+      <h2 class="hero-title" style="left: 380px; top: 300px; text-align: center;">ТЕБЕ</h2>
+      <h3 class="hero-title" style="left: 50px; top: 165px; text-align: left;">оНО</h3>
     </section>
+    
     <section class="lots">
-      <div class="container w-[1052px] h-[723px] relative mx-auto">
-        <div class="w-48 h-0 left-[40px] top-[725px] absolute outline outline-1 outline-offset-[-0.50px] outline-black"></div>
-        <a href="#" class="left-[40px] top-[700px] absolute justify-start text-black text-xl font-normal font-['Raleway']">посмотреть больше</a>
-        <div class="w-80 h-[596px] left-[718px] top-[74px] absolute">
-          <img class="w-80 h-[596px] left-0 top-0 absolute" src="https://placehold.co/334x596" alt="Lot Image"/>
-          <div class="w-80 h-[596px] left-0 top-0 absolute bg-black/60"></div>
-          <div class="w-64 left-[40px] top-[284px] absolute justify-start text-white text-xl font-normal font-['Raleway'] leading-normal">Ну действительно, там линия, тут кружочек, а здесь и вовсе что-то похожее на инфузорию-туфельку...</div>
-          <div class="w-64 h-28 left-[40px] top-[48px] absolute justify-start text-white text-xl font-bold font-['Raleway'] underline uppercase leading-relaxed">Картина, которую повторит даже 5-летний сын маминой подруги</div>
-        </div>
-        <div class="w-80 h-[596px] left-[359px] top-[74px] absolute">
-          <img class="w-80 h-[596px] left-0 top-0 absolute" src="https://placehold.co/334x596" alt="Lot Image"/>
-          <div class="w-80 h-[596px] left-0 top-0 absolute bg-black/60"></div>
-          <div class="w-64 left-[40px] top-[188px] absolute justify-start text-white text-xl font-normal font-['Raleway'] leading-normal">Объёмом почти в тысячу страниц...</div>
-          <div class="w-64 h-28 left-[40px] top-[48px] absolute justify-start text-white text-xl font-bold font-['Raleway'] underline uppercase leading-relaxed">Книга, где описан один скучный день из жизни рекламного агента</div>
-        </div>
-        <div class="w-80 h-[596px] left-0 top-[74px] absolute">
-          <img class="w-80 h-[596px] left-0 top-0 absolute" src="https://placehold.co/334x596" alt="Lot Image"/>
-          <div class="w-80 h-[596px] left-0 top-0 absolute bg-black/60"></div>
-          <div class="w-64 h-36 left-[40px] top-[404px] absolute justify-start text-white text-xl font-normal font-['Raleway'] leading-normal">Не просто бросил, а ушёл с первой лекции...</div>
-          <div class="w-64 h-20 left-[40px] top-[48px] absolute justify-start text-white text-xl font-bold font-['Raleway'] underline uppercase leading-relaxed">Фильм режиссёра, который бросил киношколу</div>
-        </div>
-        <div class="left-[40px] top-0 absolute justify-start text-black text-4xl font-bold font-['Raleway'] uppercase">Лоты</div>
-      </div>
+      <h2 class="lots-title">Лоты</h2>
+      
+      <a href="#" class="view-more">посмотреть больше</a>
+      <div class="divider" style="width: 192px; left: 40px; top: 725px;"></div>
+      
+      <a href="#" class="lot-card" style="left: 718px; top: 74px;">
+        <img class="lot-image" src="https://placehold.co/334x596" alt="Картина Кандинского">
+        <div class="lot-overlay"></div>
+        <p class="lot-description" style="top: 284px;">Ну действительно, там линия, тут кружочек, а здесь и вовсе что-то похожее на инфузорию-туфельку. Никаких полей, лесов, котиков... Сколько бы вы на такое поставили, если бы не знали, что это — одна из революционных работ Кандинского?</p>
+        <h3 class="lot-title" style="height: 112px;">Картина, которую повторит даже 5-летний сын маминой подруги</h3>
+      </a>
+      
+      <a href="#" class="lot-card" style="left: 359px; top: 74px;">
+        <img class="lot-image" src="https://placehold.co/334x596" alt="Книга Улисс">
+        <div class="lot-overlay"></div>
+        <p class="lot-description" style="top: 188px;">Объёмом почти в тысячу страниц. Иногда без знаков препинания и с переходами на древнеанглийский. В ней одновременно рассказывается о 16 июня 1904 года и об истории литературы, начиная с античных времён. И это всё накладывается на эпическую поэму Гомера. Сколько бы вы поставили на «Улисса» Джеймса Джойса?</p>
+        <h3 class="lot-title" style="height: 112px;">Книга, где описан один скучный день из жизни рекламного агента</h3>
+      </a>
+      
+      <a href="#" class="lot-card" style="left: 0; top: 74px;">
+        <img class="lot-image" src="https://placehold.co/334x596" alt="Фильм Пола Томаса Андерсона">
+        <div class="lot-overlay"></div>
+        <p class="lot-description" style="top: 404px; height: 144px;">Не просто бросил, а ушёл с первой лекции. Какой была бы ваша ставка, если бы вы не знали, что режиссёр — Пол Томас Андерсон?</p>
+        <h3 class="lot-title" style="height: 80px;">Фильм режиссёра, который бросил киношколу</h3>
+      </a>
     </section>
+    
     <section class="about">
-      <div class="container w-[1052px] h-[595px] relative mx-auto">
-        <div class="w-[693px] h-96 left-[359px] top-[133px] absolute">
-          <div class="w-[688px] left-0 top-[150px] absolute justify-start text-black text-xl font-normal font-['Raleway'] leading-normal">Здесь вы не встретите очередное пафосное собрание...</div>
-          <div class="w-[693px] left-0 top-[294px] absolute justify-start text-black text-xl font-normal font-['Raleway'] leading-normal">Слишком сложные или, наоборот, слишком простые...</div>
-          <div class="left-0 top-[3px] absolute justify-start text-black text-4xl font-bold font-['Raleway'] uppercase">Об аукционе</div>
+      <div class="about-logo">
+        <div class="logo-circle"></div>
+        <div class="logo-inner-white">
+          <div class="logo-white-inner"></div>
+          <div class="logo-white-bg"></div>
         </div>
-        <div class="w-60 h-60 left-[47px] top-[35px] absolute">
-          <div class="w-60 h-60 left-0 top-0 absolute bg-black rounded-full"></div>
-          <div class="w-36 h-28 left-[46.48px] top-[64px] absolute overflow-hidden">
-            <div class="w-32 h-24 left-[7px] top-[3px] absolute outline outline-[6px] outline-offset-[-3px] outline-white"></div>
-            <div class="w-36 h-28 left-[4.42px] top-[1.25px] absolute bg-white"></div>
-          </div>
-        </div>
+      </div>
+      
+      <div class="about-content">
+        <h2 class="about-title">Об аукционе</h2>
+        <p class="about-text" style="top: 150px;">Здесь вы не встретите очередное пафосное собрание невероятно дорогого антиквариата. Наши лоты вообще не должны были попасть ни на один аукцион. Потому что кому нужен дневник девочки-подростка или картина, которую может нарисовать даже ребёнок? Кому нужны все эти странные вещи, созданные любителями?</p>
+        <p class="about-text" style="top: 294px;">Слишком сложные или, наоборот, слишком простые. Опережающие своё время. В пух и прах растерзанные критиками. Непринятые и непонятые. Когда-то они казались просто неудачными. Но, несмотря на критику, кажущуюся простоту или сложность, сейчас без этих лотов невозможно представить современную культуру. Когда в эти вещи не верил никто, продолжали верить их создатели. И сейчас эти лоты стали культовыми.</p>
       </div>
     </section>
   </main>
-  <footer>
-    <div class="container w-[1100px] h-44 relative mx-auto">
-      <div class="w-60 left-[810px] top-[1px] absolute inline-flex justify-start items-start gap-12">
-        <a href="#" class="w-12 h-12 rounded-full border border-black"></a>
-        <a href="#" class="w-6 h-5 bg-black"></a>
-        <a href="#" class="w-2 h-2.5 bg-black"></a>
-        <a href="#" class="w-12 h-12 rounded-full border border-black"></a>
-        <a href="#" class="w-7 h-4 bg-black"></a>
-        <a href="#" class="w-12 h-12 rounded-full border border-black"></a>
-        <a href="#" class="w-4 h-5 bg-black"></a>
+  
+  <footer class="footer">
+    <div class="social-links">
+      <a href="#" class="social-link">
+        <div style="width: 48px; height: 48px; border-radius: 50%; border: 1px solid #000;"></div>
+      </a>
+      <a href="#" class="social-link">
+        <div style="width: 24px; height: 20px; background-color: #000;"></div>
+      </a>
+      <a href="#" class="social-link">
+        <div style="width: 8px; height: 10px; background-color: #000;"></div>
+      </a>
+      <a href="#" class="social-link">
+        <div style="width: 48px; height: 48px; border-radius: 50%; border: 1px solid #000;"></div>
+      </a>
+      <a href="#" class="social-link">
+        <div style="width: 28px; height: 16px; background-color: #000;"></div>
+      </a>
+      <a href="#" class="social-link">
+        <div style="width: 48px; height: 48px; border-radius: 50%; border: 1px solid #000;"></div>
+      </a>
+      <a href="#" class="social-link">
+        <div style="width: 16px; height: 20px; background-color: #000;"></div>
+      </a>
+    </div>
+    
+    <nav class="footer-nav">
+      <div class="footer-nav-item" style="width: 112px; left: 490px; top: 43px;">
+        <a href="#" class="footer-nav-link">об аукционе</a>
       </div>
-      <div class="w-28 h-0 left-[496.60px] top-[65px] absolute outline outline-1 outline-offset-[-0.50px] outline-black"></div>
-      <a href="#" class="w-28 left-[490.60px] top-[43px] absolute text-center justify-start text-black text-lg font-normal font-['Raleway']">об аукционе</a>
-      <div class="w-36 h-0 left-[477.60px] top-[44px] absolute outline outline-1 outline-offset-[-0.50px] outline-black"></div>
-      <a href="#" class="w-40 left-[468.60px] top-[22px] absolute text-center justify-start text-black text-lg font-normal font-['Raleway']">посмотреть лоты</a>
-      <a href="#" class="w-20 left-[513.70px] top-[1px] absolute text-center justify-start text-black text-lg font-normal font-['Raleway']">главная</a>
-      <div class="w-64 left-[51.10px] top-[49px] absolute justify-start text-black text-lg font-normal font-['Raleway'] leading-normal">наб. Принсенграхт 263-265, Амстердам</div>
-      <div class="w-32 h-0 left-[51px] top-[48px] absolute outline outline-1 outline-offset-[-0.50px] outline-black"></div>
-      <div class="w-64 h-6 left-[50px] top-[24px] absolute justify-start text-black text-lg font-normal font-['Raleway'] leading-normal"><a href="mailto:info@sobaka.ge">info@sobaka.ge</a></div>
-      <div class="w-32 h-0 left-[51px] top-[24px] absolute outline outline-1 outline-offset-[-0.50px] outline-black"></div>
-      <div class="w-64 h-6 left-[50.57px] top-0 absolute justify-start text-black text-lg font-normal font-['Raleway'] leading-normal"><a href="tel:+99995555555">+9 999 555 5555</a></div>
+      <div class="divider" style="width: 112px; left: 496px; top: 65px;"></div>
+      
+      <div class="footer-nav-item" style="width: 160px; left: 468px; top: 22px;">
+        <a href="#" class="footer-nav-link">посмотреть лоты</a>
+      </div>
+      <div class="divider" style="width: 144px; left: 477px; top: 44px;"></div>
+      
+      <div class="footer-nav-item" style="width: 80px; left: 513px; top: 1px;">
+        <a href="#" class="footer-nav-link">главная</a>
+      </div>
+    </nav>
+    
+    <address class="footer-contact" style="width: 256px; left: 51px; top: 49px;">
+      наб. Принсенграхт 263-265, Амстердам
+    </address>
+    <div class="divider" style="width: 128px; left: 51px; top: 48px;"></div>
+    
+    <div class="footer-contact" style="width: 256px; height: 24px; left: 50px; top: 24px;">
+      <a href="mailto:info@sobaka.ge">info@sobaka.ge</a>
+    </div>
+    <div class="divider" style="width: 128px; left: 51px; top: 24px;"></div>
+    
+    <div class="footer-contact" style="width: 256px; height: 24px; left: 50px; top: 0;">
+      <a href="tel:+99995555555">+9 999 555 5555</a>
     </div>
   </footer>
 </body>
