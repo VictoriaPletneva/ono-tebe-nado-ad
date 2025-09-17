@@ -13,18 +13,17 @@
       padding: 0;
     }
     
+    html, body {
+      width: 100%;
+      overflow-x: hidden;
+    }
+    
     body {
       margin: 0;
-      overflow-x: hidden;
+      padding: 0;
       font-family: 'Raleway', sans-serif;
       color: #000;
       line-height: 1;
-    }
-    
-    .container {
-      width: 100%;
-      max-width: 1100px;
-      margin: 0 auto;
     }
     
     /* Header styles */
@@ -33,6 +32,7 @@
       height: 288px;
       position: relative;
       margin: 0 auto;
+      overflow: hidden;
     }
     
     .logo-link {
@@ -49,18 +49,17 @@
       width: 128px;
       height: 96px;
       position: absolute;
-      left: 11.39px;
-      top: 2.79px;
-      outline: 6px solid #000;
-      outline-offset: -3px;
+      left: 11px;
+      top: 3px;
+      border: 6px solid #000;
     }
     
     .logo-bg {
       width: 128px;
       height: 112px;
       position: absolute;
-      left: 9.03px;
-      top: 1.16px;
+      left: 9px;
+      top: 1px;
       background-color: #000;
     }
     
@@ -72,15 +71,13 @@
       color: #000;
       font-size: 18px;
       font-weight: 400;
-      font-family: 'Raleway', sans-serif;
       line-height: normal;
     }
     
     .divider {
       height: 0;
       position: absolute;
-      outline: 1px solid #000;
-      outline-offset: -0.5px;
+      border-bottom: 1px solid #000;
     }
     
     .contact-info {
@@ -88,7 +85,6 @@
       color: #000;
       font-size: 18px;
       font-weight: 400;
-      font-family: 'Raleway', sans-serif;
       line-height: normal;
     }
     
@@ -109,7 +105,6 @@
       color: #000;
       font-size: 18px;
       font-weight: 400;
-      font-family: 'Raleway', sans-serif;
       text-decoration: none;
     }
     
@@ -166,9 +161,7 @@
       color: #fff;
       font-size: 20px;
       font-weight: 500;
-      font-family: 'Raleway', sans-serif;
       text-transform: uppercase;
-      text-align: center;
     }
     
     .hero-title {
@@ -176,7 +169,6 @@
       color: #fff;
       font-size: 90px;
       font-weight: 700;
-      font-family: 'Raleway', sans-serif;
       text-transform: uppercase;
       line-height: 115px;
       letter-spacing: 30px;
@@ -189,7 +181,6 @@
       color: #fff;
       font-size: 20px;
       font-weight: 400;
-      font-family: 'Raleway', sans-serif;
       text-transform: uppercase;
       line-height: 28px;
     }
@@ -200,6 +191,7 @@
       height: 723px;
       position: relative;
       margin: 0 auto;
+      overflow: hidden;
     }
     
     .lots-title {
@@ -209,7 +201,6 @@
       color: #000;
       font-size: 36px;
       font-weight: 700;
-      font-family: 'Raleway', sans-serif;
       text-transform: uppercase;
     }
     
@@ -220,7 +211,6 @@
       color: #000;
       font-size: 20px;
       font-weight: 400;
-      font-family: 'Raleway', sans-serif;
       text-decoration: none;
     }
     
@@ -228,6 +218,8 @@
       width: 320px;
       height: 596px;
       position: absolute;
+      text-decoration: none;
+      color: inherit;
     }
     
     .lot-image {
@@ -254,7 +246,6 @@
       color: #fff;
       font-size: 20px;
       font-weight: 400;
-      font-family: 'Raleway', sans-serif;
       line-height: normal;
     }
     
@@ -266,7 +257,6 @@
       color: #fff;
       font-size: 20px;
       font-weight: 700;
-      font-family: 'Raleway', sans-serif;
       text-decoration: underline;
       text-transform: uppercase;
       line-height: 1.4;
@@ -278,11 +268,11 @@
       height: 595px;
       position: relative;
       margin: 0 auto;
+      overflow: hidden;
     }
     
     .about-content {
       width: 693px;
-      height: 384px;
       position: absolute;
       left: 359px;
       top: 133px;
@@ -295,7 +285,6 @@
       color: #000;
       font-size: 36px;
       font-weight: 700;
-      font-family: 'Raleway', sans-serif;
       text-transform: uppercase;
     }
     
@@ -306,7 +295,6 @@
       color: #000;
       font-size: 20px;
       font-weight: 400;
-      font-family: 'Raleway', sans-serif;
       line-height: normal;
     }
     
@@ -332,7 +320,7 @@
       width: 144px;
       height: 112px;
       position: absolute;
-      left: 46.48px;
+      left: 48px;
       top: 64px;
       overflow: hidden;
     }
@@ -343,16 +331,15 @@
       position: absolute;
       left: 7px;
       top: 3px;
-      outline: 6px solid #fff;
-      outline-offset: -3px;
+      border: 6px solid #fff;
     }
     
     .logo-white-bg {
       width: 144px;
       height: 112px;
       position: absolute;
-      left: 4.42px;
-      top: 1.25px;
+      left: 4px;
+      top: 1px;
       background-color: #fff;
     }
     
@@ -362,6 +349,7 @@
       height: 176px;
       position: relative;
       margin: 0 auto;
+      overflow: hidden;
     }
     
     .social-links {
@@ -370,7 +358,7 @@
       left: 810px;
       top: 1px;
       display: flex;
-      gap: 48px;
+      justify-content: space-between;
     }
     
     .social-link {
@@ -390,9 +378,7 @@
       color: #000;
       font-size: 18px;
       font-weight: 400;
-      font-family: 'Raleway', sans-serif;
       text-decoration: none;
-      text-align: center;
     }
     
     .footer-contact {
@@ -400,7 +386,6 @@
       color: #000;
       font-size: 18px;
       font-weight: 400;
-      font-family: 'Raleway', sans-serif;
       line-height: normal;
     }
     
@@ -417,7 +402,7 @@
       <div class="logo-bg"></div>
     </a>
     
-    <address class="address-info">наб. Принсенграхт 263-265, Амстердам</address>
+    <div class="address-info">наб. Принсенграхт 263-265, Амстердам</div>
     
     <div class="divider" style="width: 128px; left: 810px; top: 143px;"></div>
     
@@ -565,9 +550,9 @@
       </div>
     </nav>
     
-    <address class="footer-contact" style="width: 256px; left: 51px; top: 49px;">
+    <div class="footer-contact" style="width: 256px; left: 51px; top: 49px;">
       наб. Принсенграхт 263-265, Амстердам
-    </address>
+    </div>
     <div class="divider" style="width: 128px; left: 51px; top: 48px;"></div>
     
     <div class="footer-contact" style="width: 256px; height: 24px; left: 50px; top: 24px;">
