@@ -4,71 +4,67 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Аукцион "Оно тебе надо"</title>
+  <!-- Шрифты подключаются первыми -->
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
   <style>
     /* Reset styles */
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
-    }
-    
-    html, body {
-      width: 100%;
-      overflow-x: hidden;
+      box-sizing: border-box;
     }
     
     body {
-      margin: 0;
-      padding: 0;
       font-family: 'Raleway', sans-serif;
-      color: #000;
+      color: #000000;
       line-height: 1;
+      overflow-x: hidden;
+      min-width: 1100px;
+      background-color: #fff;
     }
     
-    /* Header styles */
-    .header {
+    /* Основные стили */
+    .header-container {
       width: 1100px;
       height: 288px;
       position: relative;
       margin: 0 auto;
-      overflow: hidden;
     }
     
     .logo-link {
+      position: absolute;
       width: 144px;
       height: 112px;
-      position: absolute;
       left: 478px;
       top: 92px;
       overflow: hidden;
       text-decoration: none;
     }
     
-    .logo-inner {
+    .logo-outline {
       width: 128px;
       height: 96px;
       position: absolute;
-      left: 11px;
-      top: 3px;
-      border: 6px solid #000;
+      left: 11.39px;
+      top: 2.79px;
+      outline: 6px solid #000;
+      outline-offset: -3px;
     }
     
-    .logo-bg {
+    .logo-fill {
       width: 128px;
       height: 112px;
       position: absolute;
-      left: 9px;
-      top: 1px;
+      left: 9.03px;
+      top: 1.16px;
       background-color: #000;
     }
     
-    .address-info {
-      width: 240px;
+    .contact-address {
       position: absolute;
+      width: 240px;
       left: 811px;
       top: 144px;
-      color: #000;
       font-size: 18px;
       font-weight: 400;
       line-height: normal;
@@ -80,35 +76,35 @@
       border-bottom: 1px solid #000;
     }
     
-    .contact-info {
+    .contact-email {
       position: absolute;
-      color: #000;
+      width: 240px;
+      height: 24px;
+      left: 810px;
+      top: 119px;
       font-size: 18px;
       font-weight: 400;
       line-height: normal;
     }
     
-    .contact-info a {
-      color: inherit;
-      text-decoration: none;
-    }
-    
-    .nav-menu {
-      list-style: none;
+    .contact-phone {
+      position: absolute;
+      width: 240px;
+      height: 24px;
+      left: 810px;
+      top: 95px;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: normal;
     }
     
     .nav-item {
       position: absolute;
-    }
-    
-    .nav-link {
-      color: #000;
       font-size: 18px;
       font-weight: 400;
-      text-decoration: none;
     }
     
-    .dot {
+    .nav-dot {
       width: 6px;
       height: 6px;
       position: absolute;
@@ -117,12 +113,11 @@
     }
     
     /* Hero section */
-    .hero {
+    .hero-section {
       width: 1100px;
       height: 757px;
       position: relative;
       margin: 0 auto;
-      overflow: hidden;
     }
     
     .hero-image {
@@ -149,7 +144,7 @@
       position: absolute;
       left: 794px;
       top: 656px;
-      border: 1px solid #fff;
+      border: 1px solid #FFFFFF;
       background: transparent;
       cursor: pointer;
     }
@@ -158,7 +153,7 @@
       position: absolute;
       left: 16px;
       top: 12px;
-      color: #fff;
+      color: #FFFFFF;
       font-size: 20px;
       font-weight: 500;
       text-transform: uppercase;
@@ -166,7 +161,7 @@
     
     .hero-title {
       position: absolute;
-      color: #fff;
+      color: #FFFFFF;
       font-size: 90px;
       font-weight: 700;
       text-transform: uppercase;
@@ -178,7 +173,7 @@
       position: absolute;
       left: 50px;
       top: 668px;
-      color: #fff;
+      color: #FFFFFF;
       font-size: 20px;
       font-weight: 400;
       text-transform: uppercase;
@@ -186,19 +181,17 @@
     }
     
     /* Lots section */
-    .lots {
+    .lots-section {
       width: 1052px;
       height: 723px;
       position: relative;
       margin: 0 auto;
-      overflow: hidden;
     }
     
     .lots-title {
       position: absolute;
       left: 40px;
       top: 0;
-      color: #000;
       font-size: 36px;
       font-weight: 700;
       text-transform: uppercase;
@@ -208,10 +201,10 @@
       position: absolute;
       left: 40px;
       top: 700px;
-      color: #000;
       font-size: 20px;
       font-weight: 400;
       text-decoration: none;
+      color: #000;
     }
     
     .lot-card {
@@ -243,7 +236,7 @@
       width: 256px;
       position: absolute;
       left: 40px;
-      color: #fff;
+      color: #FFFFFF;
       font-size: 20px;
       font-weight: 400;
       line-height: normal;
@@ -254,7 +247,7 @@
       position: absolute;
       left: 40px;
       top: 48px;
-      color: #fff;
+      color: #FFFFFF;
       font-size: 20px;
       font-weight: 700;
       text-decoration: underline;
@@ -263,12 +256,11 @@
     }
     
     /* About section */
-    .about {
+    .about-section {
       width: 1052px;
       height: 595px;
       position: relative;
       margin: 0 auto;
-      overflow: hidden;
     }
     
     .about-content {
@@ -282,7 +274,6 @@
       position: absolute;
       left: 0;
       top: 3px;
-      color: #000;
       font-size: 36px;
       font-weight: 700;
       text-transform: uppercase;
@@ -292,7 +283,6 @@
       width: 688px;
       position: absolute;
       left: 0;
-      color: #000;
       font-size: 20px;
       font-weight: 400;
       line-height: normal;
@@ -325,22 +315,23 @@
       overflow: hidden;
     }
     
-    .logo-white-inner {
+    .logo-white-outline {
       width: 128px;
       height: 96px;
       position: absolute;
       left: 7px;
       top: 3px;
-      border: 6px solid #fff;
+      outline: 6px solid #FFFFFF;
+      outline-offset: -3px;
     }
     
-    .logo-white-bg {
+    .logo-white-fill {
       width: 144px;
       height: 112px;
       position: absolute;
       left: 4px;
       top: 1px;
-      background-color: #fff;
+      background-color: #FFFFFF;
     }
     
     /* Footer */
@@ -349,7 +340,6 @@
       height: 176px;
       position: relative;
       margin: 0 auto;
-      overflow: hidden;
     }
     
     .social-links {
@@ -366,78 +356,70 @@
       text-decoration: none;
     }
     
-    .footer-nav {
-      list-style: none;
-    }
-    
     .footer-nav-item {
       position: absolute;
-    }
-    
-    .footer-nav-link {
-      color: #000;
       font-size: 18px;
       font-weight: 400;
-      text-decoration: none;
+      text-align: center;
     }
     
     .footer-contact {
       position: absolute;
-      color: #000;
       font-size: 18px;
       font-weight: 400;
       line-height: normal;
     }
     
-    .footer-contact a {
+    a {
       color: inherit;
       text-decoration: none;
     }
   </style>
 </head>
 <body>
-  <header class="header">
-    <a href="/" class="logo-link">
-      <div class="logo-inner"></div>
-      <div class="logo-bg"></div>
-    </a>
-    
-    <div class="address-info">наб. Принсенграхт 263-265, Амстердам</div>
-    
-    <div class="divider" style="width: 128px; left: 810px; top: 143px;"></div>
-    
-    <div class="contact-info" style="width: 240px; height: 24px; left: 810px; top: 119px;">
-      <a href="mailto:info@sobaka.ge">info@sobaka.ge</a>
-    </div>
-    
-    <div class="divider" style="width: 128px; left: 810px; top: 119px;"></div>
-    
-    <div class="contact-info" style="width: 240px; height: 24px; left: 810px; top: 95px;">
-      <a href="tel:+99995555555">+9 999 555 5555</a>
-    </div>
-    
-    <nav class="nav-menu">
-      <div class="nav-item" style="left: 331px; top: 133px;">
-        <a href="#" class="nav-link">об аукционе</a>
+  <header>
+    <div class="header-container">
+      <!-- Логотип обернут в ссылку -->
+      <a href="/" class="logo-link">
+        <div class="logo-outline"></div>
+        <div class="logo-fill"></div>
+      </a>
+      
+      <div class="contact-address">наб. Принсенграхт 263-265, Амстердам</div>
+      
+      <div class="divider" style="width: 128px; left: 810px; top: 143px;"></div>
+      
+      <div class="contact-email">
+        <a href="mailto:info@sobaka.ge">info@sobaka.ge</a>
       </div>
-      <div class="dot" style="left: 312px; top: 142px;"></div>
+      
+      <div class="divider" style="width: 128px; left: 810px; top: 119px;"></div>
+      
+      <div class="contact-phone">
+        <a href="tel:+99995555555">+9 999 555 5555</a>
+      </div>
+      
+      <div class="nav-item" style="left: 331px; top: 133px;">
+        <a href="#">об аукционе</a>
+      </div>
+      <div class="nav-dot" style="left: 312px; top: 142px;"></div>
       <div class="divider" style="width: 144px; left: 148px; top: 155px;"></div>
       
       <div class="nav-item" style="left: 148px; top: 133px;">
-        <a href="#" class="nav-link">посмотреть лоты</a>
+        <a href="#">посмотреть лоты</a>
       </div>
-      <div class="dot" style="left: 130px; top: 142px;"></div>
+      <div class="nav-dot" style="left: 130px; top: 142px;"></div>
       <div class="divider" style="width: 112px; left: 50px; top: 155px;"></div>
       
       <div class="nav-item" style="left: 50px; top: 133px;">
-        <a href="#" class="nav-link">главная</a>
+        <a href="#">главная</a>
       </div>
-    </nav>
+    </div>
   </header>
   
   <main>
-    <section class="hero">
-      <img class="hero-image" src="https://placehold.co/1100x757" alt="Главное изображение аукциона">
+    <section class="hero-section">
+      <img class="hero-image" src="https://via.placeholder.com/1100x757/cccccc/666666?text=Главное+изображение" alt="Главное изображение аукциона">
       <div class="hero-overlay"></div>
       
       <button class="bid-button">
@@ -464,40 +446,40 @@
       <h3 class="hero-title" style="left: 50px; top: 165px; text-align: left;">оНО</h3>
     </section>
     
-    <section class="lots">
+    <section class="lots-section">
       <h2 class="lots-title">Лоты</h2>
       
       <a href="#" class="view-more">посмотреть больше</a>
       <div class="divider" style="width: 192px; left: 40px; top: 725px;"></div>
       
       <a href="#" class="lot-card" style="left: 718px; top: 74px;">
-        <img class="lot-image" src="https://placehold.co/334x596" alt="Картина Кандинского">
+        <img class="lot-image" src="https://via.placeholder.com/320x596/cccccc/666666?text=Картина" alt="Картина Кандинского">
         <div class="lot-overlay"></div>
         <p class="lot-description" style="top: 284px;">Ну действительно, там линия, тут кружочек, а здесь и вовсе что-то похожее на инфузорию-туфельку. Никаких полей, лесов, котиков... Сколько бы вы на такое поставили, если бы не знали, что это — одна из революционных работ Кандинского?</p>
         <h3 class="lot-title" style="height: 112px;">Картина, которую повторит даже 5-летний сын маминой подруги</h3>
       </a>
       
       <a href="#" class="lot-card" style="left: 359px; top: 74px;">
-        <img class="lot-image" src="https://placehold.co/334x596" alt="Книга Улисс">
+        <img class="lot-image" src="https://via.placeholder.com/320x596/cccccc/666666?text=Книга" alt="Книга Улисс">
         <div class="lot-overlay"></div>
         <p class="lot-description" style="top: 188px;">Объёмом почти в тысячу страниц. Иногда без знаков препинания и с переходами на древнеанглийский. В ней одновременно рассказывается о 16 июня 1904 года и об истории литературы, начиная с античных времён. И это всё накладывается на эпическую поэму Гомера. Сколько бы вы поставили на «Улисса» Джеймса Джойса?</p>
         <h3 class="lot-title" style="height: 112px;">Книга, где описан один скучный день из жизни рекламного агента</h3>
       </a>
       
       <a href="#" class="lot-card" style="left: 0; top: 74px;">
-        <img class="lot-image" src="https://placehold.co/334x596" alt="Фильм Пола Томаса Андерсона">
+        <img class="lot-image" src="https://via.placeholder.com/320x596/cccccc/666666?text=Фильм" alt="Фильм Пола Томаса Андерсона">
         <div class="lot-overlay"></div>
         <p class="lot-description" style="top: 404px; height: 144px;">Не просто бросил, а ушёл с первой лекции. Какой была бы ваша ставка, если бы вы не знали, что режиссёр — Пол Томас Андерсон?</p>
         <h3 class="lot-title" style="height: 80px;">Фильм режиссёра, который бросил киношколу</h3>
       </a>
     </section>
     
-    <section class="about">
+    <section class="about-section">
       <div class="about-logo">
         <div class="logo-circle"></div>
         <div class="logo-inner-white">
-          <div class="logo-white-inner"></div>
-          <div class="logo-white-bg"></div>
+          <div class="logo-white-outline"></div>
+          <div class="logo-white-fill"></div>
         </div>
       </div>
       
@@ -534,21 +516,19 @@
       </a>
     </div>
     
-    <nav class="footer-nav">
-      <div class="footer-nav-item" style="width: 112px; left: 490px; top: 43px;">
-        <a href="#" class="footer-nav-link">об аукционе</a>
-      </div>
-      <div class="divider" style="width: 112px; left: 496px; top: 65px;"></div>
-      
-      <div class="footer-nav-item" style="width: 160px; left: 468px; top: 22px;">
-        <a href="#" class="footer-nav-link">посмотреть лоты</a>
-      </div>
-      <div class="divider" style="width: 144px; left: 477px; top: 44px;"></div>
-      
-      <div class="footer-nav-item" style="width: 80px; left: 513px; top: 1px;">
-        <a href="#" class="footer-nav-link">главная</a>
-      </div>
-    </nav>
+    <div class="footer-nav-item" style="width: 112px; left: 490px; top: 43px;">
+      <a href="#">об аукционе</a>
+    </div>
+    <div class="divider" style="width: 112px; left: 496px; top: 65px;"></div>
+    
+    <div class="footer-nav-item" style="width: 160px; left: 468px; top: 22px;">
+      <a href="#">посмотреть лоты</a>
+    </div>
+    <div class="divider" style="width: 144px; left: 477px; top: 44px;"></div>
+    
+    <div class="footer-nav-item" style="width: 80px; left: 513px; top: 1px;">
+      <a href="#">главная</a>
+    </div>
     
     <div class="footer-contact" style="width: 256px; left: 51px; top: 49px;">
       наб. Принсенграхт 263-265, Амстердам
