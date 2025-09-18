@@ -1,548 +1,155 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Аукцион "Оно тебе надо"</title>
-  <!-- Шрифты подключаются первыми -->
+  <title>Оно тебе надо — аукцион вещей, в которые никто не верил</title>
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    /* Reset styles */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
     body {
-      font-family: 'Raleway', sans-serif;
-      color: #000000;
-      line-height: 1;
+      margin: 0;
       overflow-x: hidden;
-      min-width: 1100px;
-      background-color: #fff;
-    }
-    
-    /* Основные стили */
-    .header-container {
-      width: 1100px;
-      height: 288px;
-      position: relative;
-      margin: 0 auto;
-    }
-    
-    .logo-link {
-      position: absolute;
-      width: 144px;
-      height: 112px;
-      left: 478px;
-      top: 92px;
-      overflow: hidden;
-      text-decoration: none;
-    }
-    
-    .logo-outline {
-      width: 128px;
-      height: 96px;
-      position: absolute;
-      left: 11.39px;
-      top: 2.79px;
-      outline: 6px solid #000;
-      outline-offset: -3px;
-    }
-    
-    .logo-fill {
-      width: 128px;
-      height: 112px;
-      position: absolute;
-      left: 9.03px;
-      top: 1.16px;
-      background-color: #000;
-    }
-    
-    .contact-address {
-      position: absolute;
-      width: 240px;
-      left: 811px;
-      top: 144px;
-      font-size: 18px;
-      font-weight: 400;
-      line-height: normal;
-    }
-    
-    .divider {
-      height: 0;
-      position: absolute;
-      border-bottom: 1px solid #000;
-    }
-    
-    .contact-email {
-      position: absolute;
-      width: 240px;
-      height: 24px;
-      left: 810px;
-      top: 119px;
-      font-size: 18px;
-      font-weight: 400;
-      line-height: normal;
-    }
-    
-    .contact-phone {
-      position: absolute;
-      width: 240px;
-      height: 24px;
-      left: 810px;
-      top: 95px;
-      font-size: 18px;
-      font-weight: 400;
-      line-height: normal;
-    }
-    
-    .nav-item {
-      position: absolute;
-      font-size: 18px;
-      font-weight: 400;
-    }
-    
-    .nav-dot {
-      width: 6px;
-      height: 6px;
-      position: absolute;
-      border-radius: 50%;
-      border: 0.5px solid #000;
-    }
-    
-    /* Hero section */
-    .hero-section {
-      width: 1100px;
-      height: 757px;
-      position: relative;
-      margin: 0 auto;
-    }
-    
-    .hero-image {
-      width: 1100px;
-      height: 757px;
-      position: absolute;
-      left: 0;
-      top: 0;
-    }
-    
-    .hero-overlay {
-      width: 1100px;
-      height: 757px;
-      position: absolute;
-      left: 0;
-      top: 0;
-      background-color: #000;
-      opacity: 0.6;
-    }
-    
-    .bid-button {
-      width: 256px;
-      height: 48px;
-      position: absolute;
-      left: 794px;
-      top: 656px;
-      border: 1px solid #FFFFFF;
-      background: transparent;
-      cursor: pointer;
-    }
-    
-    .bid-text {
-      position: absolute;
-      left: 16px;
-      top: 12px;
-      color: #FFFFFF;
-      font-size: 20px;
-      font-weight: 500;
-      text-transform: uppercase;
-    }
-    
-    .hero-title {
-      position: absolute;
-      color: #FFFFFF;
-      font-size: 90px;
-      font-weight: 700;
-      text-transform: uppercase;
-      line-height: 115px;
-      letter-spacing: 30px;
-    }
-    
-    .hero-subtitle {
-      position: absolute;
-      left: 50px;
-      top: 668px;
-      color: #FFFFFF;
-      font-size: 20px;
-      font-weight: 400;
-      text-transform: uppercase;
-      line-height: 28px;
-    }
-    
-    /* Lots section */
-    .lots-section {
-      width: 1052px;
-      height: 723px;
-      position: relative;
-      margin: 0 auto;
-    }
-    
-    .lots-title {
-      position: absolute;
-      left: 40px;
-      top: 0;
-      font-size: 36px;
-      font-weight: 700;
-      text-transform: uppercase;
-    }
-    
-    .view-more {
-      position: absolute;
-      left: 40px;
-      top: 700px;
-      font-size: 20px;
-      font-weight: 400;
-      text-decoration: none;
-      color: #000;
-    }
-    
-    .lot-card {
-      width: 320px;
-      height: 596px;
-      position: absolute;
-      text-decoration: none;
-      color: inherit;
-    }
-    
-    .lot-image {
-      width: 320px;
-      height: 596px;
-      position: absolute;
-      left: 0;
-      top: 0;
-    }
-    
-    .lot-overlay {
-      width: 320px;
-      height: 596px;
-      position: absolute;
-      left: 0;
-      top: 0;
-      background-color: rgba(0, 0, 0, 0.6);
-    }
-    
-    .lot-description {
-      width: 256px;
-      position: absolute;
-      left: 40px;
-      color: #FFFFFF;
-      font-size: 20px;
-      font-weight: 400;
-      line-height: normal;
-    }
-    
-    .lot-title {
-      width: 256px;
-      position: absolute;
-      left: 40px;
-      top: 48px;
-      color: #FFFFFF;
-      font-size: 20px;
-      font-weight: 700;
-      text-decoration: underline;
-      text-transform: uppercase;
-      line-height: 1.4;
-    }
-    
-    /* About section */
-    .about-section {
-      width: 1052px;
-      height: 595px;
-      position: relative;
-      margin: 0 auto;
-    }
-    
-    .about-content {
-      width: 693px;
-      position: absolute;
-      left: 359px;
-      top: 133px;
-    }
-    
-    .about-title {
-      position: absolute;
-      left: 0;
-      top: 3px;
-      font-size: 36px;
-      font-weight: 700;
-      text-transform: uppercase;
-    }
-    
-    .about-text {
-      width: 688px;
-      position: absolute;
-      left: 0;
-      font-size: 20px;
-      font-weight: 400;
-      line-height: normal;
-    }
-    
-    .about-logo {
-      width: 240px;
-      height: 240px;
-      position: absolute;
-      left: 47px;
-      top: 35px;
-    }
-    
-    .logo-circle {
-      width: 240px;
-      height: 240px;
-      position: absolute;
-      left: 0;
-      top: 0;
-      background-color: #000;
-      border-radius: 50%;
-    }
-    
-    .logo-inner-white {
-      width: 144px;
-      height: 112px;
-      position: absolute;
-      left: 48px;
-      top: 64px;
-      overflow: hidden;
-    }
-    
-    .logo-white-outline {
-      width: 128px;
-      height: 96px;
-      position: absolute;
-      left: 7px;
-      top: 3px;
-      outline: 6px solid #FFFFFF;
-      outline-offset: -3px;
-    }
-    
-    .logo-white-fill {
-      width: 144px;
-      height: 112px;
-      position: absolute;
-      left: 4px;
-      top: 1px;
-      background-color: #FFFFFF;
-    }
-    
-    /* Footer */
-    .footer {
-      width: 1100px;
-      height: 176px;
-      position: relative;
-      margin: 0 auto;
-    }
-    
-    .social-links {
-      width: 240px;
-      position: absolute;
-      left: 810px;
-      top: 1px;
-      display: flex;
-      justify-content: space-between;
-    }
-    
-    .social-link {
-      display: block;
-      text-decoration: none;
-    }
-    
-    .footer-nav-item {
-      position: absolute;
-      font-size: 18px;
-      font-weight: 400;
-      text-align: center;
-    }
-    
-    .footer-contact {
-      position: absolute;
-      font-size: 18px;
-      font-weight: 400;
-      line-height: normal;
-    }
-    
-    a {
-      color: inherit;
-      text-decoration: none;
+      font-family: 'Raleway', sans-serif;
     }
   </style>
 </head>
+
 <body>
-  <header>
-    <div class="header-container">
-      <!-- Логотип обернут в ссылку -->
-      <a href="/" class="logo-link">
-        <div class="logo-outline"></div>
-        <div class="logo-fill"></div>
-      </a>
-      
-      <div class="contact-address">наб. Принсенграхт 263-265, Амстердам</div>
-      
-      <div class="divider" style="width: 128px; left: 810px; top: 143px;"></div>
-      
-      <div class="contact-email">
-        <a href="mailto:info@sobaka.ge">info@sobaka.ge</a>
+  <header class="header">
+    <nav class="header__menu">
+      <ul class="header__links-list">
+        <li class="header__links-list-item header__links-list-item_no-bullit">
+          <a class="header__link header__link_active" href="#">главная</a>
+        </li>
+        <li class="header__links-list-item">
+          <a class="header__link" href="#">посмотреть лоты</a>
+        </li>
+        <li class="header__links-list-item">
+          <a class="header__link" href="#">об аукционе</a>
+        </li>
+      </ul>
+    </nav>
+    <a class="header__logo">
+      <div class="header__logo-image">
+        <div class="logo-black-square"></div>
       </div>
-      
-      <div class="divider" style="width: 128px; left: 810px; top: 119px;"></div>
-      
-      <div class="contact-phone">
-        <a href="tel:+99995555555">+9 999 555 5555</a>
-      </div>
-      
-      <div class="nav-item" style="left: 331px; top: 133px;">
-        <a href="#">об аукционе</a>
-      </div>
-      <div class="nav-dot" style="left: 312px; top: 142px;"></div>
-      <div class="divider" style="width: 144px; left: 148px; top: 155px;"></div>
-      
-      <div class="nav-item" style="left: 148px; top: 133px;">
-        <a href="#">посмотреть лоты</a>
-      </div>
-      <div class="nav-dot" style="left: 130px; top: 142px;"></div>
-      <div class="divider" style="width: 112px; left: 50px; top: 155px;"></div>
-      
-      <div class="nav-item" style="left: 50px; top: 133px;">
-        <a href="#">главная</a>
-      </div>
-    </div>
+    </a>
+    <address class="address header__address">
+      <a href="tel:+99995555555">+9 999 555 5555</a>
+      <a href="mailto:info@sobaka.ge">info@sobaka.ge</a>
+      <p>наб. Принсенграхт 263-265, Амстердам</p>
+    </address>
   </header>
-  
+
   <main>
-    <section class="hero-section">
-      <img class="hero-image" src="https://via.placeholder.com/1100x757/cccccc/666666?text=Главное+изображение" alt="Главное изображение аукциона">
-      <div class="hero-overlay"></div>
-      
-      <button class="bid-button">
-        <span class="bid-text">Сделать ставку</span>
-      </button>
-      
-      <div class="hero-subtitle">
-        <span style="letter-spacing: 0;">Аукцион</span>
-        <span style="letter-spacing: 19.8px;"> </span>
-        <span style="letter-spacing: 0;">вещей,</span>
-        <span style="letter-spacing: 17.6px;"> </span>
-        <span style="letter-spacing: 24.2px;">в</span>
-        <span style="letter-spacing: 0;">которые</span>
-        <span style="letter-spacing: 17.6px;"> </span>
-        <span style="letter-spacing: 0;">никто</span>
-        <span style="letter-spacing: 19.8px;"> </span>
-        <span style="letter-spacing: 0;">не</span>
-        <span style="letter-spacing: 17.6px;"> </span>
-        <span style="letter-spacing: 0;">верил</span>
+    <section class="cover">
+      <div class="overlay"></div>
+      <h1 class="cover__title">
+        <span class="aligned-text">о<span class="letter-spacing-extended">н</span><span
+            class="no-letter-spacing">о</span></span>
+        <span class="aligned-text aligned-text_center">те<span class="letter-spacing-extended">б</span><span
+            class="no-letter-spacing">е</span></span>
+        <span class="aligned-text aligned-text_right"><span class="letter-spacing-extended">н</span>ад<span
+            class="no-letter-spacing">о</span></span>
+      </h1>
+      <div class="cover__description">
+        <p class="cover__description-text">Аукцион вещей, в которые никто не верил</p>
+        <button class="bet-button" type="button">Сделать ставку</button>
       </div>
-      
-      <h1 class="hero-title" style="left: 663px; top: 435px; text-align: right;">НАДО</h1>
-      <h2 class="hero-title" style="left: 380px; top: 300px; text-align: center;">ТЕБЕ</h2>
-      <h3 class="hero-title" style="left: 50px; top: 165px; text-align: left;">оНО</h3>
     </section>
-    
-    <section class="lots-section">
-      <h2 class="lots-title">Лоты</h2>
-      
-      <a href="#" class="view-more">посмотреть больше</a>
-      <div class="divider" style="width: 192px; left: 40px; top: 725px;"></div>
-      
-      <a href="#" class="lot-card" style="left: 718px; top: 74px;">
-        <img class="lot-image" src="https://via.placeholder.com/320x596/cccccc/666666?text=Картина" alt="Картина Кандинского">
-        <div class="lot-overlay"></div>
-        <p class="lot-description" style="top: 284px;">Ну действительно, там линия, тут кружочек, а здесь и вовсе что-то похожее на инфузорию-туфельку. Никаких полей, лесов, котиков... Сколько бы вы на такое поставили, если бы не знали, что это — одна из революционных работ Кандинского?</p>
-        <h3 class="lot-title" style="height: 112px;">Картина, которую повторит даже 5-летний сын маминой подруги</h3>
-      </a>
-      
-      <a href="#" class="lot-card" style="left: 359px; top: 74px;">
-        <img class="lot-image" src="https://via.placeholder.com/320x596/cccccc/666666?text=Книга" alt="Книга Улисс">
-        <div class="lot-overlay"></div>
-        <p class="lot-description" style="top: 188px;">Объёмом почти в тысячу страниц. Иногда без знаков препинания и с переходами на древнеанглийский. В ней одновременно рассказывается о 16 июня 1904 года и об истории литературы, начиная с античных времён. И это всё накладывается на эпическую поэму Гомера. Сколько бы вы поставили на «Улисса» Джеймса Джойса?</p>
-        <h3 class="lot-title" style="height: 112px;">Книга, где описан один скучный день из жизни рекламного агента</h3>
-      </a>
-      
-      <a href="#" class="lot-card" style="left: 0; top: 74px;">
-        <img class="lot-image" src="https://via.placeholder.com/320x596/cccccc/666666?text=Фильм" alt="Фильм Пола Томаса Андерсона">
-        <div class="lot-overlay"></div>
-        <p class="lot-description" style="top: 404px; height: 144px;">Не просто бросил, а ушёл с первой лекции. Какой была бы ваша ставка, если бы вы не знали, что режиссёр — Пол Томас Андерсон?</p>
-        <h3 class="lot-title" style="height: 80px;">Фильм режиссёра, который бросил киношколу</h3>
-      </a>
+
+    <section class="lots">
+      <h2 class="lots__heading">Лоты</h2>
+      <ul class="lots__card-list">
+        <li class="lots__card-list-item">
+          <a class="card-link" href="#">
+            <article class="card card_type_film">
+              <div class="overlay"></div>
+              <h3 class="card__title">Фильм режиссёра, который бросил киношколу</h3>
+              <p class="card__text">Не просто бросил, а ушёл с первой лекции. Какой была бы ваша ставка, если бы вы не знали, что режиссёр — Пол Томас Андерсон?</p>
+            </article>
+          </a>
+        </li>
+        <li class="lots__card-list-item">
+          <a class="card-link" href="#">
+            <article class="card card_type_book">
+              <div class="overlay"></div>
+              <h3 class="card__title">Книга, где описан один скучный день из жизни рекламного агента</h3>
+              <p class="card__text">Объёмом почти в тысячу страниц. Иногда без знаков препинания и с переходами на древнеанглийский. В ней одновременно рассказывается о 16 июня 1904 года и об истории литературы, начиная с античных времён. И это всё накладывается на эпическую поэму Гомера. Сколько бы вы поставили на «Улисса» Джеймса Джойса?</p>
+            </article>
+          </a>
+        </li>
+        <li class="lots__card-list-item">
+          <a class="card-link" href="#">
+            <article class="card card_type_picture">
+              <div class="overlay"></div>
+              <h3 class="card__title">Картина, которую повторит даже 5-летний сын маминой подруги</h3>
+              <p class="card__text">Ну действительно, там линия, тут кружочек, а здесь и вовсе что-то похожее на инфузорию-туфельку. Никаких полей, лесов, котиков... Сколько бы вы на такое поставили, если бы не знали, что это — одна из революционных работ Кандинского?</p>
+            </article>
+          </a>
+        </li>
+      </ul>
+      <a class="lots__look-more-link" href="#">посмотреть больше</a>
     </section>
-    
-    <section class="about-section">
-      <div class="about-logo">
-        <div class="logo-circle"></div>
-        <div class="logo-inner-white">
-          <div class="logo-white-outline"></div>
-          <div class="logo-white-fill"></div>
+
+    <section class="about">
+      <div class="about__column">
+        <div class="about__logo">
+          <div class="about__logo-image">
+            <div class="logo-white-square"></div>
+          </div>
         </div>
-      </div>
-      
-      <div class="about-content">
-        <h2 class="about-title">Об аукционе</h2>
-        <p class="about-text" style="top: 150px;">Здесь вы не встретите очередное пафосное собрание невероятно дорогого антиквариата. Наши лоты вообще не должны были попасть ни на один аукцион. Потому что кому нужен дневник девочки-подростка или картина, которую может нарисовать даже ребёнок? Кому нужны все эти странные вещи, созданные любителями?</p>
-        <p class="about-text" style="top: 294px;">Слишком сложные или, наоборот, слишком простые. Опережающие своё время. В пух и прах растерзанные критиками. Непринятые и непонятые. Когда-то они казались просто неудачными. Но, несмотря на критику, кажущуюся простоту или сложность, сейчас без этих лотов невозможно представить современную культуру. Когда в эти вещи не верил никто, продолжали верить их создатели. И сейчас эти лоты стали культовыми.</p>
+        <div class="about__article">
+          <h2 class="about__title">Об аукционе</h2>
+          <div class="about__text">
+            <p>Здесь вы не встретите очередное пафосное собрание невероятно дорогого антиквариата. Наши лоты вообще не должны были попасть ни на один аукцион. Потому что кому нужен дневник девочки-подростка или картина, которую может нарисовать даже ребёнок? Кому нужны все эти странные вещи, созданные любителями?</p>
+            <p>Слишком сложные или, наоборот, слишком простые. Опережающие своё время. В пух и прах растерзанные критиками. Непринятые и непонятые. Когда-то они казались просто неудачными. Но, несмотря на критику, кажущуюся простоту или сложность, сейчас без этих лотов невозможно представить современную культуру. Когда в эти вещи не верил никто, продолжали верить их создатели. И сейчас эти лоты стали культовыми.</p>
+          </div>
+        </div>
       </div>
     </section>
   </main>
-  
+
   <footer class="footer">
-    <div class="social-links">
-      <a href="#" class="social-link">
-        <div style="width: 48px; height: 48px; border-radius: 50%; border: 1px solid #000;"></div>
-      </a>
-      <a href="#" class="social-link">
-        <div style="width: 24px; height: 20px; background-color: #000;"></div>
-      </a>
-      <a href="#" class="social-link">
-        <div style="width: 8px; height: 10px; background-color: #000;"></div>
-      </a>
-      <a href="#" class="social-link">
-        <div style="width: 48px; height: 48px; border-radius: 50%; border: 1px solid #000;"></div>
-      </a>
-      <a href="#" class="social-link">
-        <div style="width: 28px; height: 16px; background-color: #000;"></div>
-      </a>
-      <a href="#" class="social-link">
-        <div style="width: 48px; height: 48px; border-radius: 50%; border: 1px solid #000;"></div>
-      </a>
-      <a href="#" class="social-link">
-        <div style="width: 16px; height: 20px; background-color: #000;"></div>
-      </a>
-    </div>
-    
-    <div class="footer-nav-item" style="width: 112px; left: 490px; top: 43px;">
-      <a href="#">об аукционе</a>
-    </div>
-    <div class="divider" style="width: 112px; left: 496px; top: 65px;"></div>
-    
-    <div class="footer-nav-item" style="width: 160px; left: 468px; top: 22px;">
-      <a href="#">посмотреть лоты</a>
-    </div>
-    <div class="divider" style="width: 144px; left: 477px; top: 44px;"></div>
-    
-    <div class="footer-nav-item" style="width: 80px; left: 513px; top: 1px;">
-      <a href="#">главная</a>
-    </div>
-    
-    <div class="footer-contact" style="width: 256px; left: 51px; top: 49px;">
-      наб. Принсенграхт 263-265, Амстердам
-    </div>
-    <div class="divider" style="width: 128px; left: 51px; top: 48px;"></div>
-    
-    <div class="footer-contact" style="width: 256px; height: 24px; left: 50px; top: 24px;">
-      <a href="mailto:info@sobaka.ge">info@sobaka.ge</a>
-    </div>
-    <div class="divider" style="width: 128px; left: 51px; top: 24px;"></div>
-    
-    <div class="footer-contact" style="width: 256px; height: 24px; left: 50px; top: 0;">
-      <a href="tel:+99995555555">+9 999 555 5555</a>
+    <div class="footer__menu">
+      <address class="address footer__address">
+        <a href="tel:+99995555555">+9 999 555 5555</a>
+        <a href="mailto:info@sobaka.ge">info@sobaka.ge</a>
+        <p>наб. Принсенграхт 263-265, Амстердам</p>
+      </address>
+      <nav class="footer__menu-list">
+        <ul>
+          <li class="footer__menu-list-item">
+            <a class="footer__menu-link footer__menu-link_active" href="#">главная</a>
+          </li>
+          <li class="footer__menu-list-item">
+            <a class="footer__menu-link" href="#">посмотреть лоты</a>
+          </li>
+          <li class="footer__menu-list-item">
+            <a class="footer__menu-link" href="#">об аукционе</a>
+          </li>
+        </ul>
+      </nav>
+      <ul class="footer__social-list">
+        <li class="footer__social-list-item">
+          <a class="footer__social-link" href="#">
+            <img class="footer__social-icon" src="#" alt="YouTube">
+          </a>
+        </li>
+        <li class="footer__social-list-item">
+          <a class="footer__social-link" href="#">
+            <img class="footer__social-icon" src="#" alt="VK">
+          </a>
+        </li>
+        <li class="footer__social-list-item">
+          <a class="footer__social-link" href="#">
+            <img class="footer__social-icon" src="#" alt="Pinterest">
+          </a>
+        </li>
+      </ul>
     </div>
   </footer>
 </body>
+
 </html>
